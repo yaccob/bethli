@@ -47,6 +47,8 @@ Releases `cli-vX.Y.Z`. The command is `bethli`.
 |---|---|---|
 | macOS 11 or later, Apple silicon | `bethli-cli_<version>_aarch64-apple-darwin.tar.gz` | Signed and notarized. |
 | macOS 11 or later, Intel | `bethli-cli_<version>_x86_64-apple-darwin.tar.gz` | The same, for Macs with an Intel processor. |
+| Windows 10 or later, 64-bit | `bethli-cli_<version>_x86_64-pc-windows-msvc.zip` | Not signed yet: SmartScreen may say "Windows protected your PC"; choose "More info", then "Run anyway". |
+| Linux, x86-64 | `bethli_<version>_amd64.deb` or `bethli-cli_<version>_x86_64-unknown-linux-gnu.tar.gz` | The `.deb` (package `bethli`) for Debian and Ubuntu; the archive for any distribution. |
 
 With [Homebrew](https://brew.sh) on macOS: `brew install yaccob/tap/bethli`.
 
