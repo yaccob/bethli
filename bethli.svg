@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- The BeThLi app icon: a photo whose corner dissolves into pixels, the
+       place where the files hide. The colours are the BeThLi petrol:
+       #3C9CAA with a gradient to #225F73, #5BB3C0 as the light tone. The
+       rendered sizes come from this file, see icons/README.md. -->
+  <defs>
+    <linearGradient id="icon-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3C9CAA"/>
+      <stop offset="1" stop-color="#225F73"/>
+    </linearGradient>
+    <linearGradient id="icon-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6EEF1"/>
+      <stop offset="1" stop-color="#A9DCE2"/>
+    </linearGradient>
+    <clipPath id="icon-photo">
+      <rect x="218" y="288" width="588" height="448" rx="14"/>
+    </clipPath>
+    <!-- The card with a staircase cut out of its lower right corner. -->
+    <clipPath id="icon-card">
+      <polygon points="192,262 832,262 832,562 792,562 792,602 752,602 752,642 712,642 712,682 672,682 672,722 632,722 632,762 192,762"/>
+    </clipPath>
+  </defs>
+  <!-- The ground: the rounded square of a macOS icon. -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#icon-bg)"/>
+  <!-- The photo: sky, sun, two mountain ranges. -->
+  <g clip-path="url(#icon-card)">
+    <rect x="192" y="262" width="640" height="500" rx="34" fill="#F7FBFB"/>
+    <g clip-path="url(#icon-photo)">
+      <rect x="218" y="288" width="588" height="448" fill="url(#icon-sky)"/>
+      <circle cx="641" cy="409" r="62" fill="#F2C14E"/>
+      <polygon points="218,736 218,566 371,440 500,557 571,503 806,682 806,736" fill="#5BB3C0"/>
+      <polygon points="218,736 218,646 336,593 465,673 571,628 724,736" fill="#225F73"/>
+    </g>
+  </g>
+  <!-- The cut-away corner as loose pixels in the photo's colours. -->
+  <rect x="809" y="699" width="23" height="23" rx="4" fill="#D6EEF1"/>
+  <rect x="801" y="611" width="30" height="30" rx="4" fill="#A9DCE2"/>
+  <rect x="798" y="568" width="32" height="32" rx="4" fill="#FFFFFF"/>
+  <rect x="771" y="741" width="20" height="20" rx="4" fill="#FFFFFF"/>
+  <rect x="765" y="695" width="26" height="26" rx="4" fill="#5BB3C0"/>
+  <rect x="761" y="651" width="30" height="30" rx="4" fill="#D6EEF1"/>
+  <rect x="757" y="607" width="34" height="34" rx="4" fill="#5BB3C0"/>
+  <rect x="725" y="735" width="27" height="27" rx="4" fill="#F2C14E"/>
+  <rect x="721" y="691" width="30" height="30" rx="4" fill="#A9DCE2"/>
+  <rect x="717" y="647" width="35" height="35" rx="4" fill="#5BB3C0"/>
+  <rect x="681" y="731" width="30" height="30" rx="4" fill="#5BB3C0"/>
+  <rect x="677" y="687" width="34" height="34" rx="4" fill="#D6EEF1"/>
+  <rect x="637" y="727" width="34" height="34" rx="4" fill="#FFFFFF"/>
+  <!-- Pixels that drifted off the photo. -->
+  <rect x="822" y="756" width="26" height="26" rx="3" fill="#D6EEF1" fill-opacity="0.9"/>
+  <rect x="866" y="738" width="20" height="20" rx="3" fill="#5BB3C0" fill-opacity="0.9"/>
+  <rect x="808" y="802" width="20" height="20" rx="3" fill="#F2C14E" fill-opacity="0.9"/>
+  <rect x="854" y="786" width="14" height="14" rx="3" fill="#FFFFFF" fill-opacity="0.9"/>
+</svg>
