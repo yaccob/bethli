@@ -11,6 +11,7 @@ This repository holds the [releases](https://github.com/yaccob/bethli/releases) 
 - **Any cover image, any files.** The files go into the lowest bits of every colour channel of a lossless PNG. Any PNG can be the cover.
 - **Encryption is a separate layer.**
   - With a passphrase, everything is encrypted (Argon2id with 256 MiB, XChaCha20-Poly1305).
+  - For a person, with their public key (since app 0.4.0 and command line 0.6.0): nobody has to agree on a passphrase. Each person makes their own key once and passes on its public part, as a short line or a file. The first image is quantum-safe once the sender has the whole key, the following ones through a pair key from ML-KEM-768 and X25519. Images can be signed provably (Ed25519 and ML-DSA-65).
   - Without one, the data is only whitened: it still looks like noise, but anyone with BeThLi can read it.
 - **No readable signature.** Without BeThLi, an image with hidden files cannot be told from noise in either mode. Salt and nonce are random for every image.
 - **Bits per channel** from 1 to 8. The cover keeps its size by default; on request it is scaled to exactly the size the files need.
@@ -56,6 +57,8 @@ With [Homebrew](https://brew.sh) on macOS: `brew install yaccob/tap/bethli`.
 bethli plan --cover photo.png notes.pdf                      # does it fit?
 bethli hide --cover photo.png --out photo-2.png notes.pdf    # hide, encrypted
 bethli reveal photo-2.png --out revealed/                    # reveal
+bethli key new --name Anna                                   # your own key
+bethli hide --cover photo.png --out photo-2.png --to Ben notes.pdf   # hide for a contact
 bethli --help                                                # everything else
 ```
 
