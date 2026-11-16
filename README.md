@@ -22,7 +22,7 @@ This repository holds the [releases](https://github.com/yaccob/bethli/releases) 
 
 Send the image as a file, not as a photo through a messenger: any lossy re-encoding destroys the hidden data, a JPEG written by BeThLi included (it must not be saved again by an image program).
 
-Images written by app 0.5.0 or command line 0.7.0 or later need app 0.5.0 or command line 0.7.0 or later to be read (format version 3). Newer versions read every older image.
+Each version reads every image an older BeThLi wrote. An image that uses a feature a version does not have yet needs that version or later to be read: texts and the "for yourself" mode (app 0.5.0, command line 0.7.0), or a new kind of carrier — a PDF, a black-and-white or a gray image (app 0.6.0, command line 0.8.0).
 
 ## Installation
 
@@ -57,14 +57,16 @@ Releases `cli-vX.Y.Z`. The command is `bethli`.
 With [Homebrew](https://brew.sh) on macOS: `brew install yaccob/tap/bethli`.
 
 ```sh
-bethli plan --cover photo.png notes.pdf                      # does it fit?
-bethli hide --cover photo.png --out photo-2.png notes.pdf    # hide, encrypted
-bethli hide --cover photo.jpg --out photo-2.jpg notes.txt    # a JPEG that stays a JPEG
+bethli plan 2-bit --cover photo.png notes.pdf                # does it fit?
+bethli hide 2-bit --cover photo.png --out photo-2.png notes.pdf      # hide, encrypted
+bethli hide jpeg-adaptive --cover photo.jpg --out photo-2.jpg notes.txt   # a JPEG that stays a JPEG
 bethli reveal photo-2.png --out revealed/                    # reveal
 bethli key new --name Anna                                   # your own key
-bethli hide --cover photo.png --out photo-2.png --to Ben notes.pdf   # hide for a contact
+bethli hide 2-bit --cover photo.png --out photo-2.png --to Ben notes.pdf   # hide for a contact
 bethli --help                                                # everything else
 ```
+
+The first argument of `plan`, `hide` and `preview` is how to hide: a preset such as `2-bit` or `jpeg-adaptive`, or `goal`, which picks the method for you by how hard the payload would be to find. Several covers at once spread one payload over all of them.
 
 `brew upgrade` brings new versions of both.
 
